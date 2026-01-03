@@ -430,81 +430,6 @@ button:hover {
   letter-spacing: -0.03em;
 }
 
-.force-landscape {
-  transform: translate(-50%, -50%) rotate(90deg);
-  width: 100vh !important;
-  height: 100vw !important;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform-origin: center center;
-  overflow: hidden;
-  margin: 0 !important;
-
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--bg-color);
-  z-index: 9999;
-  padding: 0 !important;
-}
-
-.force-landscape #timer-display {
-  font-size: min(15vh, 20vw) !important;
-  width: 100%;
-  text-align: center;
-  margin: 2vh 0;
-  line-height: 1;
-}
-
-.force-landscape #stop-btn {
-  margin-top: 2vh;
-  padding: 2vh 6vh;
-  font-size: 3vh;
-  width: auto;
-  border-radius: 50px;
-}
-
-.force-landscape #timer-title-display {
-  position: static !important;
-  font-size: 4vh;
-  margin-bottom: 1vh;
-  transform: none !important;
-  width: 90%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-#rotate-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--text-color);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 100;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  padding: 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-#rotate-btn:hover {
-  background: var(--primary-color);
-  transform: scale(1.1);
-  border-color: transparent;
-}
-
 @keyframes pulse {
   0% {
     text-shadow: 0 0 20px var(--primary-color), 0 0 60px var(--primary-color);
@@ -1242,8 +1167,7 @@ body.idle-mode {
 body.idle-mode .theme-nav-btn,
 body.idle-mode .header-controls,
 body.idle-mode #stop-btn,
-body.idle-mode #timer-title-display,
-body.idle-mode #rotate-btn {
+body.idle-mode #timer-title-display {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
@@ -1566,6 +1490,12 @@ body.idle-mode #rotate-btn {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   padding: 5px;
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.onboarding-options::-webkit-scrollbar {
+  display: none;
 }
 
 .onboarding-options.open {
